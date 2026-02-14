@@ -29,7 +29,7 @@ export class Auth {
     this.router.navigate(['/login']);
   }
 
-  IsAunthenticated(): boolean {
+  IsAuthenticated(): boolean {
     return this.isAuthenticated || localStorage.getItem('isAuthenticated') === 'true';
   }
 
