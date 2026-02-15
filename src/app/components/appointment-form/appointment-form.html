@@ -1,0 +1,78 @@
+<p>appointment-form works!</p>
+<!-- src/app/appointment-form/appointment-form.component.html -->
+<div class="appointment-container">
+    <header>
+        <h1>Asignar Turno</h1>
+        <button (click)="logout()" class="logout-btn">Cerrar Sesión</button>
+    </header>
+
+    @if(employee){
+    <div>
+        <h2>Empleado: {{ employee.name }}</h2>
+        <p>Email: {{ employee.email }}</p>
+    </div>
+    }
+
+
+    <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-group">
+            <label for="date">Fecha:</label>
+            <input type="date" id="date" formControlName="date">
+            @if(appointmentForm.get('date')?.invalid && appointmentForm.get('date')?.touched){
+            <div class="error-message">
+                La fecha es obligatoria.
+            </div>
+            }
+
+
+        </div>
+
+        <div class="form-group">
+            <label for="startTime">Hora de Inicio:</label>
+            <input type="time" id="startTime" formControlName="startTime">
+
+            @if(appointmentForm.get('startTime')?.invalid && appointmentForm.get('startTime')?.touched){
+            <div class="error-message">
+                La hora de inicio es obligatoria.
+            </div>
+            }
+
+        </div>
+
+        <div class="form-group">
+            <label for="endTime">Hora de Fin:</label>
+            <input type="time" id="endTime" formControlName="endTime">
+            @if(appointmentForm.get('endTime')?.invalid && appointmentForm.get('endTime')?.touched){
+            <div class="error-message">
+                @if(appointmentForm.get('endTime')?.errors?.['required']){
+                <span>La hora de fin es obligatoria.</span>
+                }
+            </div>
+            }
+            <!-- Nueva sección para el error de grupo -->
+            @if(appointmentForm.hasError('invalidTimeRange') && appointmentForm.touched){
+            <!-- Consulta el grupo y verifica touched -->
+            <div class="error-message">
+                <span>La hora de fin debe ser mayor a la de inicio.</span>
+            </div>
+            }
+        </div>
+
+        <button type="submit" [disabled]="appointmentForm.invalid">Guardar Turno</button>
+        <button type="button" (click)="goBack()" class="secondary-btn">Cancelar</button>
+    </form>
+
+    @if(successMessage){
+    <div class="success-message">
+        {{ successMessage }}
+    </div>
+    }
+
+
+    @if(errorMessage){
+    <div class="error-message">
+        {{ errorMessage }}
+    </div>
+    }
+
+</div>

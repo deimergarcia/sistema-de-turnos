@@ -1,0 +1,34 @@
+/* src/app/modals/appointment-list-modal/appointment-list-modal.component.css */
+.appointments-container {
+  max-height: 400px; 
+  overflow-y: auto;
+}
+
+.appointments-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.appointment-item {
+  padding: 10px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.appointment-item p {
+  margin: 2px 0;
+  font-size: 0.9em;
+}
+
+.appointment-item strong {
+  font-weight: bold;
+}
+
+.no-appointments-message {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+}

@@ -1,0 +1,20 @@
+.app-header {
+  background-color: #007bff; /* Color azul */
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra ligera */
+  margin-bottom: 20px; /* Espacio debajo del header */
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+main {
+  padding: 0 20px; /* Espacio lateral */
+  max-width: 1200px; /* Ancho máximo opcional para contenido */
+  margin: 0 auto; /* Centra el contenido */
+}

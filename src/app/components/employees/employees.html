@@ -1,0 +1,31 @@
+<div class="employees-container">
+    <header>
+        <h1>Listado de Empleados</h1>
+        <button (click)="logout()" class="logout-btn">Cerrar Sesión</button>
+    </header>
+    @if(loading){
+    <div class="loading">Cargando Empleados...</div>
+
+    }
+    @if(error){
+    <div class="error">{{error}}</div>
+    }
+
+    @if(loading === false && error === null){
+    <div>
+        @for(employee of employees; track employee.id){
+        <div class="employee-card">
+            <h3>{{employee.name}}</h3>
+            <p>{{employee.email}}</p>
+
+            <div class="button-group">
+                <button (click)="showAppointments(employee)"
+                class="appointments-btn">Turnos Asignados</button>
+                <button (click)="assignAppointment(employee.id)" class="appointments-btn">Asignar turno</button>
+            </div>
+        </div>
+        }
+    </div>
+    }
+
+</div>
