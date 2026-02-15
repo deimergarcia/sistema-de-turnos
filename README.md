@@ -26,7 +26,7 @@ Antes de comenzar, asegúrate de tener instalado:
 
 1.  **Descargar el código:** Clona este repositorio o descarga el archivo ZIP del código fuente.
     ```bash
-    git clone <https://github.com/deimergarcia/sistema-de-turnos.git>
+    git clone https://github.com/deimergarcia/sistema-de-turnos.git
     ```
 2.  **Navegar al directorio del proyecto:** Abre tu terminal o línea de comandos, navega hasta la carpeta donde descargaste el proyecto. Por ejemplo, si la carpeta se llama `sistema-de-turnos`:
     ```bash
