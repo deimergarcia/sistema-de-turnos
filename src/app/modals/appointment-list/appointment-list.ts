@@ -5,10 +5,11 @@ import { CommonModule } from '@angular/common'; // Importa CommonModule para *ng
 import { AppointmentModel } from '../../models/appointment'; // Asegúrate de la ruta correcta
 import { EmployeeModel } from '../../models/employee'; // Asegúrate de la ruta correcta
 import { AppointmentListModel } from '../../models/appointmentList';
+import { FormatDatePipe } from '../../pipes/format-date-pipe';
 
 @Component({
   selector: 'app-appointment-list',
-  imports: [MatDialogModule, MatButtonModule, CommonModule],
+  imports: [MatDialogModule, MatButtonModule, CommonModule, FormatDatePipe],
   templateUrl: './appointment-list.html',
   styleUrl: './appointment-list.css',
 })
