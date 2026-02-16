@@ -7,8 +7,8 @@
         @for(appointment of data.appointments; track appointment.id) {
           <li class="appointment-item">
             <p><strong>Fecha:</strong> {{ appointment.date | formatDate }}</p>
-            <p><strong>Hora Inicio:</strong> {{ appointment.startTime }}</p>
-            <p><strong>Hora Fin:</strong> {{ appointment.endTime }}</p>
+            <p><strong>Hora Inicio:</strong> {{ appointment.startTime | formatTime }}</p>
+            <p><strong>Hora Fin:</strong> {{ appointment.endTime | formatTime }}</p>
           </li>
         }
       </ul>
