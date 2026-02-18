@@ -16,7 +16,7 @@ export class FormatDatePipe implements PipeTransform {
       console.warn(`FormatDatePipe: Fecha inválida recibida: ${value}`);
       return value;
     }
-    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    return date.toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' });
   }
 
 }
